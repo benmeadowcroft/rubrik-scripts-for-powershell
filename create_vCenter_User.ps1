@@ -10,8 +10,8 @@ param(
 
 clear-host
 
-$usage = "Create_Rubrik_Role.ps1 -vCenter vCenterFQDNorIP -Username RubrikServiceAccountName -Domain AuthenticationDomain"
-$example = 'Create_Rubrik_Role.ps1 -vCenter "vcenter.rubrik.local" -Username svc_rubrik -Domain Rubrik.com' 
+$usage = "create_vCenter_User.ps1 -vCenter vCenterFQDNorIP -Username RubrikServiceAccountName -Domain AuthenticationDomain"
+$example = 'create_vCenter_User.ps1 -vCenter "vcenter.rubrik.local" -Username svc_rubrik -Domain Rubrik.com' 
 
 Write-Host "PowerCLI script to create Rubrik Role which includes required privileges and assigns the Rubrik Service Account to Role" -ForeGroundColor Cyan 
 
@@ -44,6 +44,8 @@ $Rubrik_Privileges = @(
 'Host.Config.Storage'
 'Network.Assign'
 'Resource.AssignVMToPool'
+'Resource.ColdMigrate'
+'Resource.HotMigrate'
 'Sessions.TerminateSession'
 'Sessions.ValidateSession'
 'System.Anonymous'
